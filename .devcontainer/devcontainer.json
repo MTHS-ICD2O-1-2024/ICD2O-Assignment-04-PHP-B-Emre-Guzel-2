@@ -1,23 +1,8 @@
 {
-    "name": "Mr Coxall - Codespace Image - PHP",
-    "image": "mcr.microsoft.com/devcontainers/php:0-8.2",
-    "portsAttributes": {
-        "8000": {
-            "label": "Hello Remote World",
-            "onAutoForward": "notify"
-        }
-    },
+    "name": "Mr Coxall - Codespace Image",
     "postCreateCommand": "bash ./.devcontainer/startup.sh",
     "customizations": {
         "vscode": {
-            "extensions": [
-                "esbenp.prettier-vscode",
-                "hediet.vscode-drawio",
-                "oderwat.indent-rainbow",
-                "PKief.material-icon-theme",
-                "sohamkamani.code-eol",
-                "vsls-contrib.gitdoc"
-            ],
             "settings": {
                 "editor.autoClosingQuotes": "always",
                 "editor.bracketPairColorization.enabled": true,
@@ -51,7 +36,6 @@
                 ],
                 "python.linting.enabled": true,
                 "terminal.integrated.copyOnSelection": true,
-                "terminal.integrated.mouseWheelZoom": true,
                 "terminal.integrated.fontSize": 20,
                 "terminal.integrated.rightClickBehavior": "copyPaste",
                 "terminal.integrated.gpuAcceleration": "off",
