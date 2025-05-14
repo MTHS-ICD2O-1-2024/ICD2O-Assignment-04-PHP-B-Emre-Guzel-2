@@ -75,15 +75,20 @@
           <p>$2.99</p>
         </label>
 
-        <br><br><br>
+        <br><br>
         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           Check price
         </button>
       </form>
 
+      <div id="result"></div>
+    </div>
 
-    <div class="display-section">
-  <img class="Calculate" src="images/kebab.jpg" alt="Kebab image">
+    <br>
+    <img class="Calculate" src="images/kebab.jpg" alt="Kebab image">
+  </div>
+
+  <!-- Do NOT modify this section as requested -->
   <div class="card">
     <h2>Menu</h2>
     <ul>
@@ -105,9 +110,6 @@
       <li>Small (1.2 KG to 500 G)</li>
     </ul>
   </div>
-</div>
-  <!-- Do NOT modify this section as requested -->
-
 
 </body>
 
