@@ -84,7 +84,9 @@ body {
 .Fahrenheit {
   font-size: 1.3rem;
 }
-
+.display-section{
+  margin-top: -20vw;
+}
 
 .card {
   background-color: #ffffff;

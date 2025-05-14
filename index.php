@@ -81,8 +81,6 @@
         </button>
       </form>
 
-      <div id="result"></div>
-    </div>
 
     <div class="display-section">
   <img class="Calculate" src="images/kebab.jpg" alt="Kebab image">
