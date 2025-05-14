@@ -35,54 +35,67 @@
         </div>
         <br><br>
         <?php
-        // Setting the varabiles 
-        $firstNum = $_GET["first-num"];
-        $secondNum = $_GET["second-num"];
-        $result = 0;
-        $count = 0;
-        $negativeResult = false;
-        $additionText = "";
+        $spiceLevel = $_GET["spice-level"];
+        $kebabType = $_GET["kebab-type"];
+        $size = $_GET["size"];  // Fixed
+        $taxRate = 0.13;
+        $spiceLevelExtra = 0;
+        $kebabPrice = 0;
+        $sizePrice = 0;
 
         // Show input values
-        echo "<b>" . "First number: " . $firstNum . "<br>" . "</b>";
-        echo  "<b>" . "Second number: " . $secondNum . "<br>" . "</b>";
+        echo "<b>&nbsp; Spice level is : " . $spiceLevel . "</b><br>";
+        // Convert kebab type to readable name
+        $readableKebabType = ucwords(str_replace("-", " ", $kebabType));
+        echo "<b>&nbsp; Kebab type is : " . $readableKebabType . "</b><br>";
 
-        // Check if the result should be negative
-        if (($firstNum < 0 && $secondNum > 0) || ($firstNum > 0 && $secondNum < 0)) {
-          $negativeResult = true;
+        // Spice level logic
+        if ($spiceLevel == 5) {
+          $spiceLevelExtra = 3.00;
+        } else if ($spiceLevel == 4 || $spiceLevel == 3) {
+          $spiceLevelExtra = 2.00;
+        } else if ($spiceLevel == 2 || $spiceLevel == 1) {
+          $spiceLevelExtra = 0.50;
         }
 
-        // Convert both numbers to positive
-        if ($firstNum < 0) {
-          $firstNum = -$firstNum;
-        }
-        if ($secondNum < 0) {
-          $secondNum = -$secondNum;
-        }
-
-        // Multiply using repeated addition
-        while ($count < $secondNum) {
-          $result += $firstNum;
-          $additionText .= $firstNum;
-
-          if ($count < $secondNum - 1) {
-            $additionText .= " + ";
-          }
-
-          $count++;
+        // Kebab prices
+        if ($kebabType == "adana-kebab") {
+          $kebabPrice = 30.99;
+        } else if ($kebabType == "urfa-kebab") {
+          $kebabPrice = 25.99;
+        } else if ($kebabType == "iskender-kebab") {
+          $kebabPrice = 35.99;
+        } else if ($kebabType == "doner-kebab") {
+          $kebabPrice = 20.99;
+        } else if ($kebabType == "lahmajun") {
+          $kebabPrice = 10.99;
         }
 
-        // Apply negative sign after the loop
-        if ($negativeResult) {
-          $result = -$result;
+        // Size logic
+        if ($size == "large") {
+          $sizePrice = 7.99;
+        } else if ($size == "medium") {
+          $sizePrice = 5.99;
+        } else if ($size == "small") {
+          $sizePrice = 2.99;
         }
 
-        // Show the full equation and result
-        echo " <b> Result is " . $additionText . " = " . $result . "</b>";
+        // Calculations
+        $subTotal  = $kebabPrice + $sizePrice + $spiceLevelExtra;
+        $tax = $subTotal * $taxRate;
+        $total = $subTotal + $tax;
+
+        // Output
+        echo "<b>&nbsp; Kebab price : $ " . round($kebabPrice, 2) . "</b><br>";
+        echo "<b>&nbsp; Size price: $ " . round($sizePrice, 2) . "</b><br>";
+        echo "<b>&nbsp; Spice Extra: $ " . round($spiceLevelExtra, 2) . "</b><br>";
+        echo "<b>&nbsp; Tax (13%) : $ " . round($tax, 2) . "</b><br>";
+        echo "<b>&nbsp; Total : $ " . round($total, 2) . "</b><br>";
         ?>
+
         <br /> <br>
         <div class="page-content-answer">
-          <a href="./index.php">Return ...</a>
+          &nbsp; <a href="./index.php">Return ...</a>
         </div>
         <br>
       </main>

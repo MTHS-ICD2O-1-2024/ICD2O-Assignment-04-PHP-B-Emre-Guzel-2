@@ -36,7 +36,7 @@
       <form action="answer.php" method="GET">
         <!-- Spice Level Input -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="number" min="1" max="5" name="spice-level" required>
+          <input class="mdl-textfield__input" type="number" min="0" max="5" name="spice-level" required>
           <label class="mdl-textfield__label" for="spice-level">Spice Level</label>
           <span class="mdl-textfield__error">Input must be between 1 and 5!</span>
         </div>
@@ -75,18 +75,14 @@
           <p>$2.99</p>
         </label>
 
-        <br><br>
+        <br><br><br>
         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           Check price
         </button>
       </form>
 
-      <div id="result"></div>
-    </div>
-
     <br>
     <img class="Calculate" src="images/kebab.jpg" alt="Kebab image">
-  </div>
 
   <!-- Do NOT modify this section as requested -->
   <div class="card">
